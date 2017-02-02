@@ -1,24 +1,104 @@
-<h1>[Large] A blogging platform</h1>
-<h3> You have a lot to say, you require a large space </h3>
+{{!-- HEADER --}}
 
-<button>Sign Up/Login In</button> <br><br>
+<div class="row">
+  <div class="col s6">
+    <h1 class="right"><b>[Large]</b></h1>
+  </div>
+  <div class="col s6">
+  {{!-- SOME FILLER ROWS HERE JUST BC I DON'T KNOW TO ALIGN TEXT TO BOTTOM OF HEADER --}}
+    <div class="row">
+    </div>
+    <div class="row">
+    </div>
+    <div class="row">
 
-<div>
-  <a href='#'>Home</a>
-  <a href='#'>Profile</a> <br><br>
+    <h4 class="left">A blogging platform</h4>
+    </div>
+  </div>
+<h4 class="center"> You have a lot to say. You require a <b>[Large]</b> space </h4>
 </div>
 
-<div class ='userPost'>
-Name: {{name}} <br>
-Post: {{post}} <br>
-Date: {{date}} <br>
+
+{{!-- NAVBAR --}}
+
+<div class="navbar-fixed valign-wrapper">
+  <nav class="transparent z-depth-0">
+    <div class="nav-wrapper center">
+{{!--    RECONSIDERING THE NEED FOR HOME OR PROFILE LINK ON ROOT PAGE --}}
+{{!--       <a href='#' class="center">Home</a> --}}
+      <a href='#' class="black-text right right center-align">Go to Profile</a>
+      <button id="loginBtn" class="waves-effect waves-light btn blue-grey lighten-3 right center-align">Sign Up/Login In</button>
+    </div>
+  </nav>
 </div>
 
-{{#each user}}
-<div class ='userPost'>
-Name: {{name}}
-Post: {{post}}
-Date: {{date}}
-</div>
 
-{{/each}}
+{{!-- BLOGGITY CONTENTS --}}
+
+<div class="container center">
+  <div class ='userPost'>
+    Name: {{name}} <br>
+    Post: {{post}} <br>
+    Date: {{date}} <br>
+  </div>
+
+    <div class ='userPost'>
+    Name: {{name}} <br>
+    Post: {{post}} <br>
+    Date: {{date}} <br>
+  </div>
+    <div class ='userPost'>
+    Name: {{name}} <br>
+    Post: {{post}} <br>
+    Date: {{date}} <br>
+  </div>
+    <div class ='userPost'>
+    Name: {{name}} <br>
+    Post: {{post}} <br>
+    Date: {{date}} <br>
+  </div>
+    <div class ='userPost'>
+    Name: {{name}} <br>
+    Post: {{post}} <br>
+    Date: {{date}} <br>
+  </div>
+    <div class ='userPost'>
+    Name: {{name}} <br>
+    Post: {{post}} <br>
+    Date: {{date}} <br>
+  </div>
+    <div class ='userPost'>
+    Name: {{name}} <br>
+    Post: {{post}} <br>
+    Date: {{date}} <br>
+  </div>
+    <div class ='userPost'>
+    Name: {{name}} <br>
+    Post: {{post}} <br>
+    Date: {{date}} <br>
+  </div>
+    <div class ='userPost'>
+    Name: {{name}} <br>
+    Post: {{post}} <br>
+    Date: {{date}} <br>
+  </div>
+    <div class ='userPost'>
+    Name: {{name}} <br>
+    Post: {{post}} <br>
+    Date: {{date}} <br>
+  </div>
+    <div class ='userPost'>
+    Name: {{name}} <br>
+    Post: {{post}} <br>
+    Date: {{date}} <br>
+  </div>
+
+  {{#each user}}
+    <div class ='row userPost'>
+      Name: {{name}}
+      Post: {{post}}
+      Date: {{date}}
+    </div>
+  {{/each}}
+
+</div>
