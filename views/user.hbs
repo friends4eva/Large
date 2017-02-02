@@ -1,0 +1,11 @@
+<h1>{{this.name}} Home Page</h1>
+<section class="get">
+  {{#each user}}
+    <ul>
+      <li>Name: {{name}}</li>
+      <li>Post: {{post}}</li>
+      <button id="edit">Edit</button>
+      <button id="delete">Delete</button>
+    </ul>
+  {{/each}}
+</section>
