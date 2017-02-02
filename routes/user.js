@@ -6,5 +6,9 @@ router.get('/', (req, res, next) => {
   // res.send('User Page')
 })
 
+router.post('/', (req, res, next) => {
+
+})
+
 module.exports = router
 

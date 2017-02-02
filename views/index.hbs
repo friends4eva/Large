@@ -1,7 +1,24 @@
-<h1>Large blogging platform</h1>
-<button>Sign Up/Login In</button>
-{{!-- <button>Log In</button> --}}
+<h1>[Large] A blogging platform</h1>
+<h3> You have a lot to say, you require a large space </h3>
+
+<button>Sign Up/Login In</button> <br><br>
+
 <div>
   <a href='#'>Home</a>
-  <a href='#'>Profile</a>
+  <a href='#'>Profile</a> <br><br>
 </div>
+
+<div class ='userPost'>
+Name: {{name}} <br>
+Post: {{post}} <br>
+Date: {{date}} <br>
+</div>
+
+{{#each user}}
+<div class ='userPost'>
+Name: {{name}}
+Post: {{post}}
+Date: {{date}}
+</div>
+
+{{/each}}
