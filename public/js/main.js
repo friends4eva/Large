@@ -1,4 +1,10 @@
 //event listeners
+$('#login').on('click', function(evt) {
+  $.get('/login', (req, res) => {
+    console.log('redirectin')
+  })
+})
+
 $('#submit').on('click', function(evt) {
   console.log('clicked')
   var title = $('.titleText').val()

@@ -2,7 +2,7 @@ const express = require('express')
 const router = express.Router()
 
 router.use((req, res, next) => {
-  var err = new Error('Not Found')
+  var err = new Error('THE PAGE IS Not Found')
   err.status = 404
   next(err)
 })

@@ -1,11 +1,11 @@
-<h1>{{this.name}} Home Page</h1>
+<h1>{{user.name}} Home Page</h1>
 <section class="get">
 
 {{!-- <button>New Post</button>
  --}}
-  {{#each user}}
+  {{#each post}}
     <ul>
-      <li>Name: {{name}}</li>
+      <li>Name: {{login}}</li>
       <li>Post: {{post}}</li>
       <button id="edit">Edit</button>
       <button id="delete">Delete</button>
@@ -33,4 +33,5 @@
     <i class="material-icons right">send</i>
   </button>
 
+<a href="/auth/logout">LOGOUT</a>
 </section>
