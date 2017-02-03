@@ -6,10 +6,10 @@
   <h6>Access Token: {{user.access_token}}</h6>
   <h5>Your current user name is: {{user.sessionId}}</h5>
   <div class="userPost">
-  {{#each user.post.post}}
+  {{#each user.post}}
     <ul>
-      <li>Title: {{user.post.title}}</li>
-      <li>Content: {{user.post.post.content}}</li>
+      <li>Title: {{post.title}}</li>
+      <li>Content: {{post.content}}</li>
       <button id="edit" data-id="{{user.access_token}}">Edit</button>
       <button id="delete">Delete</button>
     </ul>
