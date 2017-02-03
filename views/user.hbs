@@ -1,5 +1,5 @@
 
-<h1>{{user.user.name}} Home Page</h1>
+{{!-- <h1>{{user.user.name}} Home Page</h1> --}}
 
 <script
     src="https://code.jquery.com/jquery-3.1.1.js"
@@ -8,7 +8,7 @@
 
 <a class="right" href="/auth/logout">LOGOUT</a>
 <div>
-  <div><span style="font-size: 100px"><b>[Large]</b></span><span class="right" style="font-size: 50px; margin-top: 50px">{{user.name}}</span></div>
+  <div><span style="font-size: 100px"><b>[Large]</b></span><span class="right" style="font-size: 50px; margin-top: 50px">{{user.user.name}}</span></div>
 </div>
 <button id="newPostBtn" class="btn waves-effect waves-light">New Post</button>
 
@@ -20,18 +20,6 @@
  --}}
   <h6>Access Token: {{user.access_token}}</h6>
   <h5>Your current user name is: {{user.sessionId}}</h5>
-  <div class="userPost">
-  {{#each user.post}}
-    <ul>
-      <li>Title: {{post.title}}</li>
-      <li>Content: {{post.content}}</li>
-      <button id="edit" data-id="{{user.access_token}}">Edit</button>
-      <button id="delete">Delete</button>
-    </ul>
-  {{/each}}
-
-   </div>
-
 
 
 
@@ -58,7 +46,12 @@
     <button id ="cancel" class="btn waves-effect waves-light" type="cancel" name="action">Cancel
     </button>
   </section>
+
+  <div id="allPosts">
+
+  </div>
    <script>
+
 
   $('#newPostBtn').on("click", function(evt){
     $("#newPostCard").css("display", "")
@@ -72,7 +65,8 @@
   </script>
 
 
-  <ul class="center card blue-grey lighten-3" style="margin: 50px 100px 50px 100px">
+
+{{!-- //hardcoded values   <ul class="center card blue-grey lighten-3" style="margin: 50px 100px 50px 100px">
     <li>Name: {{login}}</li>
     <li>Post: {{post}}</li>
     <button id="edit" class="btn waves-effect waves-light">Edit</button>
@@ -84,15 +78,19 @@
   <li>Post: {{post}}</li>
   <button id="edit" class="btn waves-effect waves-light">Edit</button>
   <button id="delete" class="btn waves-effect waves-light">Delete</button>
-</ul>
+</ul> --}}
 
-  {{#each post}}
+  <div class="userPost">
+  {{#each user.post}}
   <ul class="center card blue-grey lighten-3" style="margin: 50px 100px 50px 100px">
-    <li>Title: {{title}}</li>
-    <li>Post: {{post}}</li>
+      <li>Title: {{post.title}}</li>
+      <li>Content: {{post.content}}</li>
     <button id="edit" class="btn waves-effect waves-light">Edit</button>
     <button id="delete" class="btn waves-effect waves-light">Delete</button>
-  </ul>
+    </ul>
   {{/each}}
+
+   </div>
+
 
 </section>

@@ -17,16 +17,24 @@ $('#submit').on('click', function(evt) {
       content: content
     }
   }
-  var template = `<ul>
-      <li>Title: ${title} </li>
-      <li>Content: ${content}</li>
-      <button id="edit">Edit</button>
-      <button id="delete">Delete</button>
-    </ul>`;
+  var template =
+    `<ul class="center card blue-grey lighten-3" style="margin: 50px 100px 50px 100px">
+    <li>Title: ${title}</li>
+    <li>Content: ${content}</li>
+    <button id="edit" class="btn waves-effect waves-light">Edit</button>
+    <button id="delete" class="btn waves-effect waves-light">Delete</button>
+  </ul>`;
+
+//   `<ul>
+//       <li>Title: ${title} </li>
+//       <li>Content: ${content}</li>
+//       <button id="edit">Edit</button>
+//       <button id="delete">Delete</button>
+// </ul>`
 
   $.post('/user', data, function(data) {
     // console.log(data)
-    $('.userPost').append(template)
+    $('#allPosts').append(template)
   })
   // location.reload();
 
