@@ -1,28 +1,14 @@
-<h1>[Large] A blogging platform</h1>
-<h3> You have a lot to say, you require a large space </h3>
-
-{{!-- <button id ="login">Sign Up/Login</button> <br><br>
- --}}
- <a href ="/auth/login">Sign Up/Login</a>
-
- <hr><br>
-
-<div>
-  <a href='#'>Home</a>
-  <a href='#'>Profile</a> <br><br>
+{{!-- need to vertically align one day --}}
+<div style="margin: 25% 0 0 0">
+  <div class="center blue-grey">
+    <div style="font-size:100px"><b>[Large]</b></div>
+    <div style="font-size:50px">A blogging platform</div><br>
+    <div style="font-size:30px"> You have a lot to say. You require a <b>[Large]</b> space</div>
+    <button id="login" class="waves-effect waves-light btn blue-grey lighten-3" style="margin: 50px 0 0 0 "><a href ="/auth/login">Sign Up/Login</a></button>
+  </div>
 </div>
 
-<div class ='userPost'>
-Name: {{name}} <br>
-Post: {{post}} <br>
-Date: {{date}} <br>
-</div>
 
-{{#each user}}
-<div class ='userPost'>
-Name: {{name}}
-Post: {{post}}
-Date: {{date}}
-</div>
 
-{{/each}}
+
+
