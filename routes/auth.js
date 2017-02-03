@@ -2,7 +2,8 @@ const express = require('express');
 const request = require('request');
 const router = express.Router();
 
-const redirect_uri = 'http://127.0.0.1:3000/auth/authorize';
+// const redirect_uri = 'http://127.0.0.1:3000/auth/authorize';
+const redirect_uri = 'https://frozen-shore-56925.herokuapp.com/authorize';
 const client_id = process.env.GITHUB_CLIENT_ID;
 const client_secret = process.env.GITHUB_CLIENT_SECRET
 const state = 'abc';
