@@ -49,11 +49,17 @@ router.post('/', (req, res, next) => {
   let sessionPost = req.session.post
   let blogger = new User(sessionPost);
   blogger.save();
-  console.log('req session', req.session)
-  console.log("Session Post OBJECT!!!!!", req.session.post)
-  console.log("Session inceptio OBJECT!!!!!", req.session.post.post)
-  console.log("Session inception title OBJECT!!!!!", req.session.post.post.title)
-res.render('user', {user: req.session})
+  // console.log('req session', req.session)
+  // console.log("Session Post OBJECT!!!!!", req.session.post)
+  // console.log("Session inceptio OBJECT!!!!!", req.session.post.post)
+  // console.log("Session inception title OBJECT!!!!!", req.session.post.post.title)
+
+  User.find()
+    .then(function(data) {
+      console.log(data)
+      res.render('user', {items:data});
+    })
+// res.render('user', {user: req.session})
 })
 
 // user {
