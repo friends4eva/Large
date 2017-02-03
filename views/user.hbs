@@ -1,40 +1,62 @@
+<script
+    src="https://code.jquery.com/jquery-3.1.1.js"
+    integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA="
+    crossorigin="anonymous"></script>
 
-
-<h1>{{user.name}} Home Page</h1>
-
+<a class="right" href="/auth/logout">LOGOUT</a>
+<div>
+  <div><span style="font-size: 100px"><b>[Large]</b></span><span class="right" style="font-size: 50px; margin-top: 50px">MY NAME{{user.name}}</span></div>
+</div>
+<button id="newPostBtn">New Post</button>
 <section class="get">
+  <section id="newPostCard" class="card" style="display:none; background:rgba(96, 125, 139, .5)">
 
-{{!-- <button>New Post</button>
- --}}
+
+      <div class="row card-content">
+        <form class="col s12">
+          <div class="row">
+            <div class="input-field col s6">
+              <input class="titleText" id="input_text" type="text" data-length="50">
+              <label for="input_text">Title</label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="input-field col s12">
+              <textarea id="textarea1" class="materialize-textarea contentText" data-length="1000"></textarea>
+              <label for="textarea1">Content</label>
+            </div>
+          </div>
+        </form>
+      </div>
+
+    <button id ="submit" class="btn waves-effect waves-light" type="submit" name="action">Submit
+      <i class="material-icons right"></i>
+    </button>
+  </section>
+   <script>
+
+  $('#newPostBtn').on("click", function(evt){
+    $("#newPostCard").css("display", "")
+    console.log("clicked")
+  })
+
+  </script>
+
+
+  <ul>
+    <li>Name: {{login}}</li>
+    <li>Post: {{post}}</li>
+    <button id="edit">Edit</button>
+    <button id="delete">Delete</button>
+  </ul>
+
   {{#each post}}
-    <ul>
-      <li>Name: {{login}}</li>
-      <li>Post: {{post}}</li>
-      <button id="edit">Edit</button>
-      <button id="delete">Delete</button>
-    </ul>
+  <ul>
+    <li>Name: {{login}}</li>
+    <li>Post: {{post}}</li>
+    <button id="edit">Edit</button>
+    <button id="delete">Delete</button>
+  </ul>
   {{/each}}
 
-    <div class="row">
-      <form class="col s12">
-        <div class="row">
-          <div class="input-field col s6">
-            <input class="titleText" id="input_text" type="text" data-length="50">
-            <label for="input_text">Title</label>
-          </div>
-        </div>
-        <div class="row">
-          <div class="input-field col s12">
-            <textarea id="textarea1" class="materialize-textarea contentText" data-length="1000"></textarea>
-            <label for="textarea1">Content</label>
-          </div>
-        </div>
-      </form>
-    </div>
-
-  <button id ="submit" class="btn waves-effect waves-light" type="submit" name="action">Submit
-    <i class="material-icons right">send</i>
-  </button>
-
-<a href="/auth/logout">LOGOUT</a>
 </section>
