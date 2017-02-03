@@ -17,10 +17,17 @@ $('#submit').on('click', function(evt) {
       content: content
     }
   }
+  var template = `<ul>
+      <li>Title: ${title} </li>
+      <li>Content: ${content}</li>
+      <button id="edit">Edit</button>
+      <button id="delete">Delete</button>
+    </ul>`;
+
   $.post('/user', data, function(data) {
     // console.log(data)
-    // $('ul').append(title)
+    $('.userPost').append(template)
   })
-  location.reload();
+  // location.reload();
 
 })

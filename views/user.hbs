@@ -5,14 +5,17 @@
  --}}
   <h6>Access Token: {{user.access_token}}</h6>
   <h5>Your current user name is: {{user.sessionId}}</h5>
-  {{#each user.post}}
+  <div class="userPost">
+  {{#each user.post.post}}
     <ul>
-      <li>Title: {{post.title}}</li>
-      <li>Content: {{post.content}}</li>
-      <button id="edit">Edit</button>
+      <li>Title: {{user.post.title}}</li>
+      <li>Content: {{user.post.post.content}}</li>
+      <button id="edit" data-id="{{user.access_token}}">Edit</button>
       <button id="delete">Delete</button>
     </ul>
   {{/each}}
+
+   </div>
 
     <div class="row">
       <form class="col s12">

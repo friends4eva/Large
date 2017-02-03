@@ -32,20 +32,22 @@ router.get('/:userName', (req, res, next) => {
 
 router.post('/', (req, res, next) => {
   var post = {
-    name: req.body.name,
+    name: req.session.sessionId,
     post: {
       title: req.body.post.title,
       content: req.body.post.content
     }
   }
 
-
+  post.access_token = req.session.access_token;
   req.session.post = post;
   let sessionPost = req.session.post
   let blogger = new User(sessionPost);
   blogger.save();
-
-  console.log(req.session)
+  console.log('req session', req.session)
+  console.log("Session Post OBJECT!!!!!", req.session.post)
+  console.log("Session inceptio OBJECT!!!!!", req.session.post.post)
+  console.log("Session inception title OBJECT!!!!!", req.session.post.post.title)
 res.render('user', {user: req.session})
 })
 
