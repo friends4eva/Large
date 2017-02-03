@@ -9,8 +9,9 @@ router.get('/', (req, res, next) => {
   // res.send('User Page')
 })
 
-router.get('/:id', (req, res, next) => {
+router.get('/:userName', (req, res, next) => {
   const rndId = req.params
+  req.session.sessionId = req.params.userName;
   const access_token = req.session.access_token;
   const url = 'https://api.github.com/user';
   const options = {
@@ -24,28 +25,34 @@ router.get('/:id', (req, res, next) => {
 
     request(options, (err, response, body) => {
     const userinfo = JSON.parse(body);
-    console.log(userinfo)
     req.session.user = userinfo;
-    res.render('user', {user: userinfo}, (err, html) => {
-      res.send(html)
-    });
+    res.render('user', {user: req.session});
   })
 })
 
 router.post('/', (req, res, next) => {
-
-  var item = {
+  var post = {
     name: req.body.name,
     post: {
-      title: req.body.title,
-      content: req.body.content
+      title: req.body.post.title,
+      content: req.body.post.content
     }
   }
-let blogger = new User(item);
-blogger.save();
-// console.log(JSON.stringify(req.body, null, 2))
 
+
+  req.session.post = post;
+  let sessionPost = req.session.post
+  let blogger = new User(sessionPost);
+  blogger.save();
+
+  console.log(req.session)
+res.render('user', {user: req.session})
 })
 
 module.exports = router
+
+//
+
+
+
 

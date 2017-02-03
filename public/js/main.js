@@ -9,16 +9,18 @@ $('#submit').on('click', function(evt) {
   console.log('clicked')
   var title = $('.titleText').val()
   var content = $('.contentText').val()
+  if (title === '' || content === '') return console.log('blank fields')
   var data = {
     name: "Big Boy",
     post: {
-      title: 'dj test',
-      content: `dj another one`
+      title: title,
+      content: content
     }
-  };
-  $.post('/user', function(data) {
-    console.log(data)
-    res.send('posted')
+  }
+  $.post('/user', data, function(data) {
+    // console.log(data)
+    // $('ul').append(title)
   })
+  location.reload();
 
 })
