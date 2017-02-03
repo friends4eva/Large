@@ -1,11 +1,15 @@
+<<<<<<< HEAD
 
+=======
+<h1>{{user.name}} Home Page</h1>
+>>>>>>> 819d089ec1b0b3f16c4e97202d9b402d96d4d4c3
 <section class="get">
 
 {{!-- <button>New Post</button>
  --}}
-  {{#each user}}
+  {{#each post}}
     <ul>
-      <li>Name: {{name}}</li>
+      <li>Name: {{login}}</li>
       <li>Post: {{post}}</li>
       <button id="edit">Edit</button>
       <button id="delete">Delete</button>
@@ -33,4 +37,5 @@
     <i class="material-icons right">send</i>
   </button>
 
+<a href="/auth/logout">LOGOUT</a>
 </section>
