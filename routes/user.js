@@ -42,8 +42,8 @@ router.post('/', (req, res, next) => {
   post.access_token = req.session.access_token;
   req.session.post = post;
 
-  req.session.post = [];
-    re.push(post);
+  // req.session.post = [];
+  //   re.push(post);
 
 
   let sessionPost = req.session.post
@@ -56,20 +56,20 @@ router.post('/', (req, res, next) => {
 res.render('user', {user: req.session})
 })
 
-user {
-  cookie:
-   { path: '/',
-     _expires: null,
-     originalMaxAge: null,
-     httpOnly: true },
-  post: [
-     { name: undefined,
-       post: { title: 'ritwick', content: 'maybe' },
-       access_token: undefined } },
-     { name: undefined,
-       post: { title: 'ritwick', content: 'maybe' },
-       access_token: undefined } }
-     ]
+// user {
+//   cookie:
+//    { path: '/',
+//      _expires: null,
+//      originalMaxAge: null,
+//      httpOnly: true },
+//   post: [
+//      { name: undefined,
+//        post: { title: 'ritwick', content: 'maybe' },
+//        access_token: undefined } },
+//      { name: undefined,
+//        post: { title: 'ritwick', content: 'maybe' },
+//        access_token: undefined } }
+//      ]
 
 module.exports = router
 
